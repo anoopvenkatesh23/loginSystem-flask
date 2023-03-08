@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+{{super()}}
+<style>
+    .form-control {
+        margin-bottom: 2rem;
+        padding: 2rem;
+        background-color: white;
+    }
+
+    .btn {
+        background-color: white;
+        font-weight: bold;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 1.5em;
+        border: 2px solid black;
+    }
+</style>
+{% endblock %}
+
+{% block heading %}User Login{% endblock %}
+
+{% block caption %}No account? <a href="/register">Register</a>{% endblock %}
+
+{% block contentinside %}
+<form class="form" action="/login" method="POST">
+    <input class="form-control" name="email" placeholder="Email" />
+    <input class="form-control" type="password" name="password" placeholder="Password" />
+    <input class="btn btn-block" type="submit" value="Register" />
+</form>
+{% endblock %}

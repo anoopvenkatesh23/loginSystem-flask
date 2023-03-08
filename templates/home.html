@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+{{super()}}
+<style>
+    .name-card {
+        color: white;
+        font-size: 2rem;
+    }
+</style>
+{% endblock %}
+
+{% block heading %}Welcome Firstname{% endblock %}
+
+{% block caption %}<a href="/logout">Logout</a>{% endblock %}
+
+{% block contentinside %}
+<div class="name-card">
+    <p class="text-center" style="font-family: 'Courier New', Courier, monospace; font-weight: bold;"><u>Your Name
+            Card</u></p>
+    <p>First Name: {{userInfo['fname']}}</p>
+    <p>Last Name: {{userInfo['lname']}}</p>
+    <p>Email: {{userInfo['email']}}</p>
+</div>
+{% endblock %}
